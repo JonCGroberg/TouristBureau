@@ -31,11 +31,13 @@
           <div class="container-fluid m-0 p-0" action="" id="categoriesForm">
             <div class="row row-gap-2 m-auto">
               <!-- Dropdowns -->
-              <div class="col-md-6 col-12 bg-body-tertiary card-body px-4">
-                <div class="row row-gap-4 s m-0 rounded-2">
-                  <div class="col-12 p-0 shadow">
+              <div class="col-md-6 col-12 card-body px-4 ">
+                <div
+                  class="row row-gap-4 justify-content-center align-content-center h-100"
+                >
+                  <div class="col-12 sd">
                     <select
-                      class="form-select"
+                      class="form-select shadow-sm"
                       name="categoriesSelect"
                       id="categoriesSelect"
                       required
@@ -43,7 +45,7 @@
                       <option selected value="">Select a Category</option>
                     </select>
                     <select
-                      class="form-select "
+                      class="form-select shadow-sm"
                       name="categoriesSelect"
                       id="categoriesSelect"
                       disabled
@@ -57,7 +59,7 @@
                       class="form-control-plaintext d-none"
                       name="purchaseMessage"
                       id="purchaseMessage"
-                      rows="0"
+                      rows="3"
                     ></textarea>
                   </div>
                 </div>
@@ -134,10 +136,14 @@
             class="form-control-plaintext"
             name="purchaseMessage"
             id="purchaseMessage"
-            >Your credit card has been charged $(amount) for (number-of-
-            tickets) to (adventure-name). A confirmation email has been sent to
-            (email).</label
-          >
+            >Your credit card has been charged $<span class="fw-bold"
+              >amount</span
+            > for <span class="fw-bold text-success"><span>number-of-tickets</span> tickets</span> to
+            <span class="fw-bold text-success">adventure-name</span>
+            (a confirmation email has been sent to
+            <span class="fw-bold">(adventure-name)</span>
+            )
+          </label>
         </div>
       </form>
     </div>
