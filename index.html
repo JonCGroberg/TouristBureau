@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <!-- Bootstrap  -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Custom JS and CSS -->
+    <script defer src="scripts/index.js"></script>
+  </head>
+  <body data-bs-theme="">
+    <div class="container-fluid p-5">
+      <!-- Activity Finder -->
+      <form class="card m-auto shadow" style="max-width: 60rem">
+        <div class="card-header">
+          <div class="card-title">Activities Finder</div>
+        </div>
+        <div class="">
+          <div class="container-fluid m-0 p-0" action="" id="categoriesForm">
+            <div class="row row-gap-2 m-auto">
+              <!-- Dropdowns -->
+              <div class="col-md-6 col-12 bg-body-tertiary card-body px-4">
+                <div class="row row-gap-4 s m-0 rounded-2">
+                  <div class="col-12 p-0 shadow">
+                    <select
+                      class="form-select"
+                      name="categoriesSelect"
+                      id="categoriesSelect"
+                      required
+                    >
+                      <option selected value="">Select a Category</option>
+                    </select>
+                    <select
+                      class="form-select "
+                      name="categoriesSelect"
+                      id="categoriesSelect"
+                      disabled
+                      required
+                    >
+                      <option selected value="">
+                        First Select an Activity
+                      </option>
+                    </select>
+                    <textarea
+                      class="form-control-plaintext d-none"
+                      name="purchaseMessage"
+                      id="purchaseMessage"
+                      rows="0"
+                    ></textarea>
+                  </div>
+                </div>
+              </div>
+              <!-- Buy Info -->
+              <div class="col-md-6 col-12 card-body px-4">
+                <div class="row row-gap-3">
+                  <div class="col-12">
+                    <label for="" class="form-label">Number Of Tickets</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      name=""
+                      id=""
+                      aria-describedby="helpId"
+                      placeholder=""
+                    />
+                  </div>
+                  <div class="col-12">
+                    <label for="email" class="form-label">Email</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      name="email"
+                      id="email"
+                      placeholder=""
+                      required
+                    />
+                  </div>
+                  <div class="col-12">
+                    <label for="creditCard" class="form-label"
+                      >Credit Card Number</label
+                    >
+                    <div class="row row-gap-3">
+                      <div class="col-sm-9 col-12">
+                        <input
+                          type="number"
+                          class="form-control"
+                          name="creditCard"
+                          id="creditCard"
+                          placeholder="4444-2222-3333-5555"
+                          required
+                        />
+                      </div>
+                      <div class="col">
+                        <input
+                          type="number"
+                          class="form-control col-2"
+                          name="cvv"
+                          id="cvv"
+                          placeholder="CVV"
+                          required
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <button
+                      type="submit"
+                      class="btn btn-danger col-12"
+                      id="purchaseBtn"
+                    >
+                      Purchase
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Purchase Message -->
+        <div class="card-footer dn">
+          <label
+            class="form-control-plaintext"
+            name="purchaseMessage"
+            id="purchaseMessage"
+            >Your credit card has been charged $(amount) for (number-of-
+            tickets) to (adventure-name). A confirmation email has been sent to
+            (email).</label
+          >
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

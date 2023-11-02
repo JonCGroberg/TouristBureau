@@ -100,3 +100,28 @@ let activities = [
         price: 0.00 
     }
 ];
+
+window.onload = () => {
+    const teamListElem = document.getElementById("soccerTeamsSelect");
+    const btnElem = document.getElementById("getInfoBtn");
+    const outputTextElem = document.getElementById("teamOutputText");
+    const form = document.getElementById("teamForm");
+  
+    for (const team of teams) {
+      const newOption = new Option(team.name, team.code);
+      teamListElem.appendChild(newOption);
+    }
+  
+    btnElem.onclick = () => {
+      outputTextElem.innerText = "";
+    };
+  
+    form.onsubmit = (event) => {
+      const selectedTeam = teams.find((team) => team.code == teamListElem.value);
+  
+      outputTextElem.innerText = `You selected the ${selectedTeam.name} (${selectedTeam.code}) who play in ${selectedTeam.plays}`;
+  
+      event.preventDefault();
+    };
+  };
+  
