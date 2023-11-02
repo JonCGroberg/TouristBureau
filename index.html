@@ -20,29 +20,36 @@
     <!-- Custom JS and CSS -->
     <script defer src="scripts/index.js"></script>
   </head>
-  <body data-bs-theme="">
+  <body data-bs-theme="dark">
     <div class="container-fluid p-5">
       <!-- Activity Finder -->
-      <form class="card m-auto shadow" style="max-width: 60rem">
+      <form
+        class="card m-auto shadow"
+        id="activitiesForm"
+        style="max-width: 60rem"
+      >
         <div class="card-header">
-          <div class="card-title">Activities Finder</div>
+          <div class="card-text">Activities Finder</div>
         </div>
-        <div class="">
-          <div class="container-fluid m-0 p-0" action="" id="categoriesForm">
+        <!-- Card Body -->
+        <div>
+          <div class="container-fluid m-0 py-3">
             <div class="row row-gap-2 m-auto">
               <!-- Dropdowns -->
-              <div class="col-md-6 col-12 card-body px-4 ">
+              <div
+                class="col-md-6 col-12 card-body px-4"
+              >
                 <div
-                  class="row row-gap-4 justify-content-center align-content-center h-100"
+                  class="row row-gap-4 justify-content-center"
                 >
-                  <div class="col-12 sd">
+                  <div class="col-12">
                     <select
                       class="form-select shadow-sm"
                       name="categoriesSelect"
                       id="categoriesSelect"
                       required
                     >
-                      <option selected value="">Select a Category</option>
+                      <option selected value="0">Select a Category</option>
                     </select>
                     <select
                       class="form-select shadow-sm"
@@ -68,23 +75,27 @@
               <div class="col-md-6 col-12 card-body px-4">
                 <div class="row row-gap-3">
                   <div class="col-12">
-                    <label for="" class="form-label">Number Of Tickets</label>
+                    <label for="ticketsInput" class="form-label"
+                      >Number Of Tickets</label
+                    >
                     <input
-                      type="text"
+                      type="number"
                       class="form-control"
-                      name=""
-                      id=""
+                      name="ticketsInput"
+                      id="ticketsInput"
                       aria-describedby="helpId"
                       placeholder=""
+                      max="2"
+                      required
                     />
                   </div>
                   <div class="col-12">
-                    <label for="email" class="form-label">Email</label>
+                    <label for="emailInput" class="form-label">Email</label>
                     <input
                       type="email"
                       class="form-control"
-                      name="email"
-                      id="email"
+                      name="emailInput"
+                      id="emailInput"
                       placeholder=""
                       required
                     />
@@ -93,29 +104,31 @@
                     <label for="creditCard" class="form-label"
                       >Credit Card Number</label
                     >
-                    <div class="row row-gap-3">
-                      <div class="col-sm-9 col-12">
+                    <div class="row row-gap-3 g-2">
+                      <div class="col-sm-8 col-12 ">
                         <input
-                          type="number"
+                          type="tel"
                           class="form-control"
-                          name="creditCard"
-                          id="creditCard"
-                          placeholder="4444-2222-3333-5555"
+                          inputmode="numeric" pattern="[0-9\s]{13,19}" autocomplete="cc-number" maxlength="19" placeholder="xxxx xxxx xxxx xxxx"
                           required
                         />
                       </div>
                       <div class="col">
                         <input
-                          type="number"
-                          class="form-control col-2"
+                          type="text"
+                          class="form-control col-2 "
                           name="cvv"
                           id="cvv"
                           placeholder="CVV"
+                          pattern="[0-9\s]{3}"
+                          minlength="3"
+                          maxlength="3"
                           required
                         />
                       </div>
                     </div>
                   </div>
+                  <div class="col-12 border border-top-0 my-2"></div>
                   <div class="col-12">
                     <button
                       type="submit"
@@ -136,12 +149,21 @@
             class="form-control-plaintext"
             name="purchaseMessage"
             id="purchaseMessage"
-            >Your credit card has been charged $<span class="fw-bold"
+            >Your credit card has been charged $<span
+              class="fw-bold"
+              id="chargedLabel"
               >amount</span
-            > for <span class="fw-bold text-success"><span>number-of-tickets</span> tickets</span> to
-            <span class="fw-bold text-success">adventure-name</span>
+            >
+            for
+            <span class="fw-bold text-success"
+              ><span id="msgTicketsLabel">number-of-tickets</span> tickets</span
+            >
+            to
+            <span class="fw-bold text-success" id="msgAdventureLabel"
+              >adventure-name</span
+            >
             (a confirmation email has been sent to
-            <span class="fw-bold">(adventure-name)</span>
+            <span class="fw-bold" id="msgEmailLabel">mailAddress</span>
             )
           </label>
         </div>
