@@ -19,61 +19,93 @@
     ></script>
     <!-- Custom JS and CSS -->
     <script defer src="scripts/activities.js"></script>
+    <link rel="stylesheet" href="styles/styles.css" />
   </head>
-  <body data-bs-theme="dark">
-    <div class="container-fluid p-5">
+  <body class="bg-body-se" data-bs-theme="">
+    <main class="container-fluid p-5">
       <!-- Activity Finder -->
       <form
         class="card m-auto shadow"
         id="activityForm"
         style="max-width: 60rem"
       >
-        <div class="card-header">
+        <section class="card-header">
           <div class="card-text">Activities Finder</div>
-        </div>
+        </section>
         <!-- Card Body -->
-        <div>
-          <div class="container-fluid m-0 py-3">
-            <div class="row row-gap-2 m-auto">
-              <!-- Dropdowns -->
-              <div
-                class="col-md-6 col-12 card-body px-4"
-              >
-                <div
-                  class="row row-gap-4 justify-content-center h-100 align-items-center"
-                >
+        <section>
+          <div class="container-fluid">
+            <div class="row p-3">
+              <!--Left Panel Dropdowns -->
+              <article class="col-md-6 col-12 card-body">
+                <div class="row">
                   <div class="col-12">
-                    <select
-                      class="form-select shadow-sm"
-                      name="categoriesSelect"
-                      id="categoriesSelect"
-                      required
+                    <div class="card-group-vertical">
+                      <div class="card overflow-hidden">
+                        <select
+                          class="form-select border-0 rounded-0"
+                          name="categoriesSelect"
+                          id="categoriesSelect"
+                          required
+                        >
+                          <option selected value="">Select Category</option>
+                        </select>
+                      </div>
+                      <div class="card">
+                        <select
+                          class="form-select border-0 rounded-0"
+                          name="activitiesSelect"
+                          id="activitiesSelect"
+                          disabled
+                          required
+                        >
+                          ,
+                          <option selected value="">Select Activity</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div
+                      class="card-group-vertical shadow-sm mt-4"
+                      id="infoSection"
                     >
-                      <option selected value="">First Select a Category</option>
-                    </select>
-                    <select
-                      class="form-select shadow-sm"
-                      name="activitiesSelect"
-                      id="activitiesSelect"
-                      disabled
-                      required
-                    >
-                    ,  <option selected value="">
-                        Then Select an Activity
-                      </option>
-                    </select>
-                    <textarea
-                      class="form-control-plaintext p-1"
-                      name="about"
-                      id="about"
-                      rows="12"
-                    ></textarea>
+                      <div class="card">
+                        <label class="card-header" for="">Description</label>
+                        <label
+                          class="px-3 py-2 small"
+                          name="description"
+                          id="description"
+                          readonly
+                        ></label>
+                      </div>
+                      <div class="card">
+                        <label class="card-header" for="">Location</label>
+                        <label
+                          class="p-3 py-2 small"
+                          name="location"
+                          id="location"
+                          readonly
+                        ></label>
+                      </div>
+
+                      <div class="card">
+                        <label class="card-header" for="">Price</label>
+                        <label
+                          class="p-3 py-2 small"
+                          name="price"
+                          id="price"
+                          readonly
+                        >
+                          <span id="price"></span
+                        ></label>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <!-- Buy Info -->
-              <div class="col-md-6 col-12 card-body px-4">
-                <div class="row row-gap-3">
+              </article>
+              <!-- Right Panel Info -->
+              <article class="col-md col-4 card-body">
+                <!-- Buy Info -->
+                <section id="purchaseSection" class="row row-gap-3 d-none">
                   <div class="col-12">
                     <label for="ticketsInput" class="form-label"
                       >Number Of Tickets</label
@@ -101,24 +133,29 @@
                     />
                   </div>
                   <div class="col-12">
-                    <label for="creditCard" class="form-label"
+                    <label for="ccInput" class="form-label"
                       >Credit Card Number</label
                     >
                     <div class="row row-gap-3 g-2">
-                      <div class="col-sm-8 col-12 ">
+                      <div class="col-sm-8 col-12">
                         <input
                           type="tel"
                           class="form-control"
-                          inputmode="numeric" pattern="[0-9\s]{13,19}" autocomplete="cc-number" maxlength="19" placeholder="xxxx xxxx xxxx xxxx"
+                          inputmode="numeric"
+                          pattern="[0-9\s]{13,19}"
+                          autocomplete="cc-number"
+                          maxlength="19"
+                          placeholder="xxxx xxxx xxxx xxxx"
+                          name="ccInput"
                           required
                         />
                       </div>
                       <div class="col">
                         <input
                           type="text"
-                          class="form-control col-2 "
-                          name="cvv"
-                          id="cvv"
+                          class="form-control col-2"
+                          name="cvvInput"
+                          id="cvvInput"
                           placeholder="CVV"
                           pattern="[0-9\s]{3}"
                           minlength="3"
@@ -128,7 +165,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="col-12 border border-top-0 my-2"></div>
+                  <div class="col-12 border border-top-0 my-2 dn"></div>
                   <div class="col-12">
                     <button
                       type="submit"
@@ -138,15 +175,55 @@
                       Purchase
                     </button>
                   </div>
+                </section>
+                <section id="reserveSection" class="row row-gap-3 ">
+                  <div class="col-12">
+                    <label for="nameInput" class="form-label"
+                      >Name</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="nameInput"
+                      id="nameInput"
+                      required
+                    />
+                  </div>
+                  <div class="col-12">
+                    <label for="phoneInput" class="form-label">Phone Number</label>
+                    <input
+                      type="tel"
+                      class="form-control"
+                      name="numberInput"
+                      id="numberInput"
+                      required
+                    />
+                  </div>
+                  <div class="col-12 border border-top-0 my-2 dn"></div>
+                  <div class="col-12">
+                    <button
+                      type="submit"
+                      class="btn btn-primary col-12"
+                      id="reserveBtn"
+                    >
+                      Reserve
+                    </button>
+                  </div>
+                </section>
+                <!-- Info -->
+                <div class="row d-none">
+                  <div class="form-control">
+                    Welcome to the activity finder. Select a category to begin
+                  </div>
                 </div>
-              </div>
+              </article>
             </div>
           </div>
-        </div>
+        </section>
         <!-- Purchase Message -->
-        <div class="card-footer">
+        <section id="messageSection" class="card-footer">
           <label
-            class="form-control-plaintext"
+            class="form-control-plaintext small"
             name="purchaseMessage"
             id="purchaseMessage"
             >Your credit card has been charged $<span
@@ -155,19 +232,19 @@
               >amount</span
             >
             for
-            <span class="fw-bold text-success-emphasis"
+            <span class="fw-bold"
               ><span id="msgTicketsLabel">number-of-tickets</span> tickets</span
             >
             to
-            <span class="fw-bold text-success-emphasis" id="msgAdventureLabel"
+            <span class="fw-bold" id="msgAdventureLabel"
               >adventure-name</span
             >
             (a confirmation email has been sent to
-            <span class="fw-bold" id="msgEmailLabel">mailAddress</span>
+            <span class="fw-bold" id="msgEmailLabel">emailAddress</span>
             )
           </label>
-        </div>
+        </section>
       </form>
-    </div>
+    </main>
   </body>
 </html>

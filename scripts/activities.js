@@ -119,6 +119,32 @@ let activities = [
   },
 ];
 
+// Inputs
+const categoriesElem = document.getElementById("categoriesSelect");
+const activitiesElem = document.getElementById("activitiesSelect");
+const ticketInput = document.getElementById("ticketsInput");
+const emailInput = document.getElementById("emailInput");
+const emailInputFree = document.getElementById("emailInputFree");
+const ccInput = document.getElementById("ccInput");
+const cvvInput = document.getElementById("cvvInput");
+const nameInput = document.getElementById("nameInput");
+
+// Other DOM Elems
+const form = document.getElementById("activityForm");
+const infoSection = document.getElementById("infoSection");
+const purchaseSection = document.getElementById("purchaseSection");
+const reserveSection = document.getElementById("reserveSection");
+const messageSection = document.getElementById("messageSection");
+
+// Outputs
+const descriptionLabel = document.getElementById("description");
+const locationLabel = document.getElementById("location");
+const priceLabel = document.getElementById("price");
+const amountLabel = document.getElementById("msgAmountLabel");
+const ticketsLabel = document.getElementById("msgTicketsLabel");
+const adventureLabel = document.getElementById("msgAdventureLabel");
+
+// Helper Functions
 function removeAllOptions(parent) {
   while (parent.lastChild && parent.length > 1) {
     parent.removeChild(parent.lastChild);
@@ -133,58 +159,88 @@ function appendFilteredOptions(options, category) {
     options.appendChild(newOption);
   }
 }
-
-function handleSubmit(event) {
-  // const selectedTeam = teams.find((team) => team.code == teamListElem.value);
-  //     messageTextElem.innerText = `You selected the ${selectedTeam.name} (${selectedTeam.code}) who play in ${selectedTeam.plays}`;
-  //     event.preventDefault();
+function clearLabels(...labels) {
+  for (const label of labels) {
+    label.innerHTML = `No ${label.id} here 😠  First select an activity...`;
+  }
+}
+function muted(option, ...labels) {
+  for (const label of labels) {
+    label.classList[option]("text-muted");
+  }
 }
 
-function populate() {}
+function setElementsAvailibilty(location, bool) {
+  document.querySelectorAll(location).forEach((element) => {
+    element.required = bool;
+  });
+}
 
+// Page Logic
 window.onload = () => {
-  // Inputs
-  const categoryList = document.getElementById("categoriesSelect");
-  const activityList = document.getElementById("activitiesSelect");
-  const form = document.getElementById("activityForm");
-  // Outputs
-  const infoLabel = document.getElementById("about");
-  const amountLabel = document.getElementById("msgAmountLabel");
-  const ticketsLabel = document.getElementById("msgTicketsLabel");
-  const adventureLabel = document.getElementById("msgAdventureLabel");
+  // Selected Activity Tracker
+  let selectedActivity = undefined;
+
+  // Intialize labels
+  clearLabels(descriptionLabel, locationLabel, priceLabel);
 
   // Populate category options
   for (const category of categories) {
     const newOption = new Option(category, category);
-    categoryList.appendChild(newOption);
+    categoriesElem.appendChild(newOption);
   }
 
   // Populate activity options based on selected category
-  categoryList.onchange = () => {
-    if (categoryList.value != "") {
-      activityList.disabled = false;
-      removeAllOptions(activityList);
-      appendFilteredOptions(activityList, categoryList.value);
-    } else activityList.disabled = true;
-    infoLabel.innerHTML = "";
+  categoriesElem.onchange = () => {
+    if (categoriesElem.value != "") {
+      activitiesElem.disabled = false;
+      removeAllOptions(activitiesElem);
+      appendFilteredOptions(activitiesElem, categoriesElem.value);
+    } else {
+      activitiesElem.disabled = true;
+    }
+    clearLabels(descriptionLabel, locationLabel, priceLabel);
+    muted("add", descriptionLabel, locationLabel, priceLabel);
   };
+
   // Populate activity info section
-  activityList.onchange = () => {
-    const selectedActivity = activities.find(
-      (activity) => activity.id == activityList.value
+  activitiesElem.onchange = () => {
+    selectedActivity = activities.find(
+      (activity) => activity.id == activitiesElem.value
     );
-    if (selectedActivity != null)
-      infoLabel.innerHTML = `Description: ${selectedActivity.description}
+    if (selectedActivity != null) {
+      descriptionLabel.innerHTML = selectedActivity.description;
+      locationLabel.innerHTML = selectedActivity.location;
+      priceLabel.innerHTML =
+        selectedActivity.price == 0 ? "Free" : "$" + selectedActivity.price;
+      muted("remove", descriptionLabel, locationLabel, priceLabel);
 
-Location: ${selectedActivity.location}
-
-Price: $${selectedActivity.price}`;
-    else infoLabel.innerHTML = "";
+      if (selectedActivity.price == 0) {
+        purchaseSection.classList.add("d-none");
+        reserveSection.classList.remove("d-none");
+        setElementsAvailibilty("#reserveSection input", true);
+        setElementsAvailibilty("#purchaseSection input", false);
+      } else {
+        reserveSection.classList.add("d-none");
+        purchaseSection.classList.remove("d-none");
+        setElementsAvailibilty("#reserveSection input", false);
+        setElementsAvailibilty("#purchaseSection input", true);
+      }
+    } else {
+      clearLabels(descriptionLabel, locationLabel, priceLabel);
+      muted("add", descriptionLabel, locationLabel, priceLabel);
+    }
   };
-  //  Category: ${selectedActivity.category}
-  // Name: ${selectedActivity.name}
-  // Id: ${selectedActivity.id}`;
 
   //Submit Logic
-  form.onsubmit = handleSubmit();
+  form.onsubmit = (e) => {
+    if (selectedActivity.price > 0) {
+      toastUser(`Your credit card has been charged ${selectedActivity.price} for ${ticketInput.value} tickets to ${selectedActivity.name} (a confirmation email has been sent to ${emailInput.value} )`);
+    }else{
+      toastUser(`Thank you ${nameInput.value} for ${selectedActivity.name} (a confirmation email has been sent to ${emailInputFree.value} )`);
+    }
+    e.preventDefault();
+  };
+
+  functio
 };
