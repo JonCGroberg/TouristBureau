@@ -19,3 +19,16 @@
     border-bottom-width: 0px;
     border-radius: 0px 0px 4px 4px;
 }
+
+.msg-toast.transition{
+    height: 60px;
+}
+
+.msg-toast{
+    color: white;
+    -webkit-transition: all 1s linear;
+    -moz-transition: all 1s linear;
+    -o-transition: all 1s linear;
+    transition: all 1s linear;
+    height: 0px;
+}

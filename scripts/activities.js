@@ -135,14 +135,13 @@ const infoSection = document.getElementById("infoSection");
 const purchaseSection = document.getElementById("purchaseSection");
 const reserveSection = document.getElementById("reserveSection");
 const messageSection = document.getElementById("messageSection");
+const toastElem = document.getElementById('toast')
+const toastMsg = document.getElementById("toastMsg")
 
 // Outputs
 const descriptionLabel = document.getElementById("description");
 const locationLabel = document.getElementById("location");
 const priceLabel = document.getElementById("price");
-const amountLabel = document.getElementById("msgAmountLabel");
-const ticketsLabel = document.getElementById("msgTicketsLabel");
-const adventureLabel = document.getElementById("msgAdventureLabel");
 
 // Helper Functions
 function removeAllOptions(parent) {
@@ -176,8 +175,10 @@ function setElementsAvailibilty(location, bool) {
   });
 }
 
-function toastUser(){
-  
+function toastUser(msg){
+  toastMsg.innerHTML = msg;
+  const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastElem)
+  toastBootstrap.show()
 }
 
 // Page Logic
@@ -187,6 +188,7 @@ window.onload = () => {
 
   // Intialize labels
   clearLabels(descriptionLabel, locationLabel, priceLabel);
+  const toastLiveExample = document.getElementById('liveToast')
 
   // Populate category options
   for (const category of categories) {
@@ -238,11 +240,12 @@ window.onload = () => {
 
   //Submit Logic
   form.onsubmit = (e) => {
+        e.preventDefault();
     if (selectedActivity.price > 0) {
       toastUser(`Your credit card has been charged ${selectedActivity.price} for ${ticketInput.value} tickets to ${selectedActivity.name} (a confirmation email has been sent to ${emailInput.value} )`);
+      toastMsg.classList.toggle("transition")
     }else{
-      toastUser(`Thank you ${nameInput.value} for ${selectedActivity.name} (a confirmation email has been sent to ${emailInputFree.value} )`);
+      toastUser(`Thank you ${nameInput.value} for reserving your spot at ${selectedActivity.name} (a confirmation email has been sent to ${emailInputFree.value} )`);
     }
-    e.preventDefault();
   };
 };
