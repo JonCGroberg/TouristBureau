@@ -176,6 +176,10 @@ function setElementsAvailibilty(location, bool) {
   });
 }
 
+function toastUser(){
+  
+}
+
 // Page Logic
 window.onload = () => {
   // Selected Activity Tracker
@@ -241,6 +245,4 @@ window.onload = () => {
     }
     e.preventDefault();
   };
-
-  functio
 };
