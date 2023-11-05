@@ -1,10 +1,11 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- Meta tags -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tourist Bureau</title>
-    <!-- Bootstrap  -->
+    <!-- Bootstrap CSS and JS -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -24,8 +25,8 @@
   <body class="" data-bs-theme="">
     <!-- Header -->
     <header class="container-fluid text-center p-0">
-      <!-- Toast -->
-      <div class="toast-container position-fixed bottom-0 p-3 w-100">
+      <!-- Toast for displaying messages -->
+      <div class="toast-container position-fixed top-0 p-3 w-100" style="margin-top: 50px;">
         <div
           id="toast"
           class="toast align-items-center text-bg-danger border-0 w-100"
@@ -56,7 +57,7 @@
                 <a class="nav-link active" href="#">Activities</a>
               </li>
             </ul>
-            <!-- Search -->
+            <!-- Search form -->
             <form class="d-flex">
               <input
                 class="form-control me-sm-2"
@@ -71,8 +72,9 @@
         </div>
       </nav>
     </header>
+    <!-- Main content -->
     <main class="container-fluid p-4">
-      <!-- Activity Finder -->
+      <!-- Activity Finder form -->
       <form
         class="card m-auto shadow"
         id="activityForm"
@@ -91,6 +93,7 @@
                   <div class="col-12">
                     <div class="card-group-vertical shadow-sm">
                       <div class="card overflow-hidden">
+                        <!-- Category selection -->
                         <select
                           class="form-select border-0 rounded-0"
                           name="categoriesSelect"
@@ -101,6 +104,7 @@
                         </select>
                       </div>
                       <div class="card">
+                        <!-- Activity selection -->
                         <select
                           class="form-select border-0 rounded-0"
                           name="activitiesSelect"
@@ -113,11 +117,13 @@
                         </select>
                       </div>
                     </div>
+                    <!-- Information section -->
                     <div
                       class="card-group-vertical shadow-sm mt-4"
                       id="infoSection"
                     >
                       <div class="card">
+                        <!-- Description -->
                         <label class="card-header" for="">Description</label>
                         <label
                           class="px-3 py-2 small"
@@ -127,6 +133,7 @@
                         ></label>
                       </div>
                       <div class="card">
+                        <!-- Location -->
                         <label class="card-header" for="">Location</label>
                         <label
                           class="p-3 py-2 small"
@@ -137,6 +144,7 @@
                       </div>
 
                       <div class="card">
+                        <!-- Price -->
                         <label class="card-header" for="">Price</label>
                         <label
                           class="p-3 py-2 small"
@@ -156,6 +164,7 @@
                 <!-- Buy Info -->
                 <section id="purchaseSection" class="row row-gap-3 d-none">
                   <div class="col-12">
+                    <!-- Number of tickets input -->
                     <label for="ticketsInput" class="form-label"
                       >Number Of Tickets</label
                     >
@@ -171,6 +180,7 @@
                     />
                   </div>
                   <div class="col-12">
+                    <!-- Email input -->
                     <label for="emailInput" class="form-label">Email</label>
                     <input
                       type="email"
@@ -182,6 +192,7 @@
                     />
                   </div>
                   <div class="col-12">
+                    <!-- Credit card input -->
                     <label for="ccInput" class="form-label"
                       >Credit Card Number</label
                     >
@@ -200,6 +211,7 @@
                         />
                       </div>
                       <div class="col">
+                        <!-- CVV input -->
                         <input
                           type="text"
                           class="form-control col-2"
@@ -216,6 +228,7 @@
                   </div>
                   <div class="col-12 border border-top-0 my-2 dn"></div>
                   <div class="col-12">
+                    <!-- Purchase button -->
                     <button
                       type="submit"
                       class="btn btn-danger col-12"
@@ -227,6 +240,7 @@
                 </section>
                 <section id="reserveSection" class="row row-gap-3">
                   <div class="col-12">
+                    <!-- Name input -->
                     <label for="nameInput" class="form-label">Name</label>
                     <input
                       type="text"
@@ -237,6 +251,7 @@
                     />
                   </div>
                   <div class="col-12">
+                    <!-- Phone number input -->
                     <label for="phoneInput" class="form-label"
                       >Phone Number</label
                     >
@@ -249,6 +264,7 @@
                     />
                   </div>
                   <div class="col-12">
+                    <!-- Email input -->
                     <label for="emailInputFree" class="form-label">Email</label>
                     <input
                       type="email"
@@ -260,6 +276,7 @@
                   </div>
                   <div class="col-12 border border-top-0 my-2 dn"></div>
                   <div class="col-12">
+                    <!-- Reserve button -->
                     <button
                       type="submit"
                       class="btn btn-primary col-12"
