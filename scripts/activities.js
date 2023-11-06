@@ -1,4 +1,11 @@
-"use strict";
+import {
+  removeAllOptions,
+  appendFilteredOptions,
+  defaultLabels,
+  muted,
+  setElementsAvailibilty,
+  toastUser,
+} from "./helperFunctions.js";
 
 let categories = [
   "Adventures",
@@ -124,10 +131,11 @@ const categoriesElem = document.getElementById("categoriesSelect");
 const activitiesElem = document.getElementById("activitiesSelect");
 const ticketInput = document.getElementById("ticketsInput");
 const emailInput = document.getElementById("emailInput");
-const emailInputFree = document.getElementById("emailInputFree");
 const ccInput = document.getElementById("ccInput");
 const cvvInput = document.getElementById("cvvInput");
 const nameInput = document.getElementById("nameInput");
+const emailInputFree = document.getElementById("emailInputFree");
+const phoneInput = document.getElementById("phoneInput");
 
 // Other DOM Elems
 const form = document.getElementById("activityForm");
@@ -135,51 +143,13 @@ const infoSection = document.getElementById("infoSection");
 const purchaseSection = document.getElementById("purchaseSection");
 const reserveSection = document.getElementById("reserveSection");
 const messageSection = document.getElementById("messageSection");
-const toastElem = document.getElementById('toast')
-const toastMsg = document.getElementById("toastMsg")
+const toastElem = document.getElementById("toast");
+const toastMsg = document.getElementById("toastMsg");
 
 // Outputs
 const descriptionLabel = document.getElementById("description");
 const locationLabel = document.getElementById("location");
 const priceLabel = document.getElementById("price");
-
-// Helper Functions
-function removeAllOptions(parent) {
-  while (parent.lastChild && parent.length > 1) {
-    parent.removeChild(parent.lastChild);
-  }
-}
-function appendFilteredOptions(options, category) {
-  const filteredOptions = activities.filter(
-    (activity) => activity.category == category
-  );
-  for (const activity of filteredOptions) {
-    const newOption = new Option(activity.name, activity.id);
-    options.appendChild(newOption);
-  }
-}
-function clearLabels(...labels) {
-  for (const label of labels) {
-    label.innerHTML = `No ${label.id} here 😠  First select an activity...`;
-  }
-}
-function muted(option, ...labels) {
-  for (const label of labels) {
-    label.classList[option]("text-muted");
-  }
-}
-
-function setElementsAvailibilty(location, bool) {
-  document.querySelectorAll(location).forEach((element) => {
-    element.required = bool;
-  });
-}
-
-function toastUser(msg){
-  toastMsg.innerHTML = msg;
-  const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastElem)
-  toastBootstrap.show()
-}
 
 // Page Logic
 window.onload = () => {
@@ -187,8 +157,8 @@ window.onload = () => {
   let selectedActivity = undefined;
 
   // Intialize labels
-  clearLabels(descriptionLabel, locationLabel, priceLabel);
-  const toastLiveExample = document.getElementById('liveToast')
+  defaultLabels(descriptionLabel, locationLabel, priceLabel);
+  const toastLiveExample = document.getElementById("liveToast");
 
   // Populate category options
   for (const category of categories) {
@@ -201,11 +171,11 @@ window.onload = () => {
     if (categoriesElem.value != "") {
       activitiesElem.disabled = false;
       removeAllOptions(activitiesElem);
-      appendFilteredOptions(activitiesElem, categoriesElem.value);
+      appendFilteredOptions(activities,activitiesElem, categoriesElem.value);
     } else {
       activitiesElem.disabled = true;
     }
-    clearLabels(descriptionLabel, locationLabel, priceLabel);
+    defaultLabels(descriptionLabel, locationLabel, priceLabel);
     muted("add", descriptionLabel, locationLabel, priceLabel);
   };
 
@@ -218,7 +188,7 @@ window.onload = () => {
       descriptionLabel.innerHTML = selectedActivity.description;
       locationLabel.innerHTML = selectedActivity.location;
       priceLabel.innerHTML =
-        selectedActivity.price == 0 ? "Free" : "$" + selectedActivity.price;
+        selectedActivity.price == 0 ? "Free" : "$" + selectedActivity.price + " Per Ticket";
       muted("remove", descriptionLabel, locationLabel, priceLabel);
 
       if (selectedActivity.price == 0) {
@@ -233,19 +203,34 @@ window.onload = () => {
         setElementsAvailibilty("#purchaseSection input", true);
       }
     } else {
-      clearLabels(descriptionLabel, locationLabel, priceLabel);
+      defaultLabels(descriptionLabel, locationLabel, priceLabel);
       muted("add", descriptionLabel, locationLabel, priceLabel);
     }
   };
 
   //Submit Logic
   form.onsubmit = (e) => {
-        e.preventDefault();
+    e.preventDefault();
     if (selectedActivity.price > 0) {
-      toastUser(`Your credit card has been charged ${selectedActivity.price} for ${ticketInput.value} tickets to ${selectedActivity.name} (a confirmation email has been sent to ${emailInput.value} )`);
-      toastMsg.classList.toggle("transition")
-    }else{
-      toastUser(`Thank you ${nameInput.value} for reserving your spot at ${selectedActivity.name} (a confirmation email has been sent to ${emailInputFree.value} )`);
+      toastUser(toastElem,
+        `Your credit card has been charged $${selectedActivity.price*ticketInput.value} for ${ticketInput.value} tickets to ${selectedActivity.name} (a confirmation email has been sent to ${emailInput.value} )`
+      );
+      toastMsg.classList.toggle("transition");
+    } else {
+      toastUser(toastElem,
+        `Thank you ${nameInput.value} for reserving your spot at ${selectedActivity.name} (a confirmation email has been sent to ${emailInputFree.value} )`
+      );
     }
+    [
+      nameInput,
+      phoneInput,
+      emailInputFree,
+      ticketInput,
+      emailInput,
+      ccInput,
+      cvvInput,
+    ].forEach((element) => {
+      element.value = "";
+    });
   };
 };

@@ -19,7 +19,7 @@
       crossorigin="anonymous"
     ></script>
     <!-- Custom JS and CSS -->
-    <script defer src="scripts/activities.js"></script>
+    <script defer src="scripts/activities.js" type="module"></script>
     <link rel="stylesheet" href="styles/styles.css" />
   </head>
   <body class="" data-bs-theme="">
@@ -41,7 +41,7 @@
       <!-- Navbar -->
       <nav class="navbar navbar-expand-sm fixed-top position-static">
         <div class="container-fluid px-4 py-1">
-          <a class="navbar-brand" href="#">Tourist Bureau</a>
+          <a class="navbar-brand" href="/index.html">Tourist Bureau</a>
           <button
             class="navbar-toggler-icon navbar-toggler"
             type="button"
@@ -176,7 +176,6 @@
                       aria-describedby="helpId"
                       placeholder=""
                       max="2"
-                      required
                     />
                   </div>
                   <div class="col-12">
@@ -188,7 +187,6 @@
                       name="emailInput"
                       id="emailInput"
                       placeholder=""
-                      required
                     />
                   </div>
                   <div class="col-12">
@@ -207,7 +205,7 @@
                           maxlength="19"
                           placeholder="xxxx xxxx xxxx xxxx"
                           name="ccInput"
-                          required
+                          id="ccInput" 
                         />
                       </div>
                       <div class="col">
@@ -221,7 +219,6 @@
                           pattern="[0-9\s]{3}"
                           minlength="3"
                           maxlength="3"
-                          required
                         />
                       </div>
                     </div>
@@ -247,7 +244,6 @@
                       class="form-control"
                       name="nameInput"
                       id="nameInput"
-                      required
                     />
                   </div>
                   <div class="col-12">
@@ -257,10 +253,12 @@
                     >
                     <input
                       type="tel"
+                      maxlength="12"
+                      inputmode="numeric"
                       class="form-control"
-                      name="numberInput"
-                      id="numberInput"
-                      required
+                      pattern="[0-9\s]{10,13}"
+                      name="phoneInput"
+                      id="phoneInput"
                     />
                   </div>
                   <div class="col-12">
@@ -271,7 +269,6 @@
                       class="form-control"
                       name="emailInputFree"
                       id="emailInputFree"
-                      required
                     />
                   </div>
                   <div class="col-12 border border-top-0 my-2 dn"></div>
