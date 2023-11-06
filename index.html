@@ -20,12 +20,12 @@
     <!-- Custom JS and CSS -->
     <link rel="stylesheet" href="styles/styles.css" />
   </head>
-  <body class="pb-5" >
+  <body class="pb-5 bg-scroll" >
     <!-- Header -->
     <header class="container-fluid">
       <!-- Navbar -->
       <nav class="navbar navbar-expand-sm fixed-top position-static">
-        <div class="container-fluid px-4 py-1">
+        <div class="container-fluid py-1">
           <a class="navbar-brand" href="#">Tourist Bureau</a>
           <button
             class="navbar-toggler-icon navbar-toggler"
@@ -37,24 +37,24 @@
             class="collapse navbar-collapse text-center"
             id="collapsibleNavId"
           >
-            <ul class="navbar-nav me-auto">
-              <li class="nav-item h-100 my-auto">
+            <ul class="navbar-nav">
+              <li class="nav-item h-100">
                 <a class="nav-link" href="#">Home </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="./activities.html"
+                <a class="nav-link active me-sm-3 me-0" href="./activities.html"
                   >Activities</a
                 >
               </li>
             </ul>
             <!-- Search form -->
-            <form class="d-flex my-auto">
+            <form class="d-flex my-auto w-100 mx-auto">
               <input
-                class="form-control me-sm-2"
+                class="form-control rounded-end-0"
                 type="text"
                 placeholder="Search"
               />
-              <button class="btn btn-outline-primary" type="submit">
+              <button class="btn btn-secondary rounded-start-0" type="submit">
                 Search
               </button>
             </form>
@@ -86,21 +86,21 @@
           <div class="carousel-inner">
             <div class="carousel-item active">
               <img
-                src="./HikingPage/birding_loop_1.png"
+                src="./HikingPage/sander-weeteling-0YM1Lc-xIek-unsplash.jpg"
                 class="w-100 h-100 d-block object-fit-cover"
                 alt="First slide"
               />
             </div>
             <div class="carousel-item">
               <img
-                src="./HikingPage/overlook_trail_1.png"
+                src="./HikingPage/karolina-bobek-ePe1bCrE6As-unsplash.jpg"
                 class="w-100 h-100 d-block object-fit-cover"
                 alt="Second slide"
               />
             </div>
             <div class="carousel-item">
               <img
-                src="./HikingPage/deep_blue_1.png"
+                src="./HikingPage/mche-lee-nTs56fr_71o-unsplash.jpg"
                 class="w-100 h-100 d-block object-fit-cover"
                 alt="Third slide"
               />
@@ -127,12 +127,11 @@
         </div>
       </section>
       <section
-        class="card shadow text-center m-auto mt-0 w-75"
-  
+        class="card shadow text-center m-auto mt-0 w-75 bg-scroll"
       >
         <section id="categories" class="">
-          <h3 class="card-header shadow-sm">Categories</h3>
-          <div class="card-body text-center py-5 mx-auto" >
+          <h3 class="card-header shadow-sm w-5">Categories</h3>
+          <div class="card-body text-center py-5 mx-auto w-75" >
             <a
               class="badge rounded-pill text-bg-primary text-decoration-none  p-2 px-3 my-1"
               href="activities.html"

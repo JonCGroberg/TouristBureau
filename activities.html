@@ -22,7 +22,7 @@
     <script defer src="scripts/activities.js" type="module"></script>
     <link rel="stylesheet" href="styles/styles.css" />
   </head>
-  <body class="" data-bs-theme="">
+  <body class="bg-scroll" data-bs-theme="">
     <!-- Header -->
     <header class="container-fluid text-center p-0">
       <!-- Toast for displaying messages -->
@@ -50,7 +50,7 @@
       <!-- Navbar -->
       <nav class="navbar navbar-expand-sm fixed-top position-static">
         <div class="container-fluid px-4 py-1">
-          <a class="navbar-brand" href="/index.html">Tourist Bureau</a>
+          <a class="navbar-brand" href="./index.html">Tourist Bureau</a>
           <button
             class="navbar-toggler-icon navbar-toggler"
             type="button"
@@ -60,20 +60,20 @@
           <div class="collapse navbar-collapse" id="collapsibleNavId">
             <ul class="navbar-nav me-auto">
               <li class="nav-item">
-                <a class="nav-link" href="/index.html">Home </a>
+                <a class="nav-link" href="./index.html">Home </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="#">Activities</a>
+                <a class="nav-link active me-sm-3 me-0" href="#">Activities</a>
               </li>
             </ul>
             <!-- Search form -->
-            <form class="d-flex">
+            <form class="d-flex my-auto w-100 mx-auto shadows rounded-2">
               <input
-                class="form-control me-sm-2"
+                class="form-control rounded-end-0"
                 type="text"
                 placeholder="Search"
               />
-              <button class="btn btn-outline-primary" type="submit">
+              <button class="btn btn-secondary rounded-start-0" type="submit">
                 Search
               </button>
             </form>
@@ -82,10 +82,10 @@
       </nav>
     </header>
     <!-- Main content -->
-    <main class="container-fluid p-4">
+    <main class="container-fluid py-4 px-3 px-sm-5">
       <!-- Activity Finder form -->
       <form
-        class="card m-auto shadow"
+        class="card m-auto shadow bg-scroll"
         id="activityForm"
         style="max-width: 60rem"
       >

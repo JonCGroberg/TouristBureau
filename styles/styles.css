@@ -1,8 +1,7 @@
 .card-group-vertical {
     border: 1px solid rgba(0, 0, 0, .125);
     border-radius: 8px;
-    overflow: hidden;
-}
+    overflow: hidden;}
 
 .card-group-vertical>.card {
     width: 100%;
@@ -31,4 +30,8 @@
     -o-transition: all 1s linear;
     transition: all 1s linear;
     height: 0px;
+}
+
+.bg-scroll{
+    background-color: rgba(241, 233, 215, 0.096);
 }
