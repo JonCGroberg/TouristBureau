@@ -1,6 +1,6 @@
 #  Tourist Bureau
 
-Responsive website tourist website demonstrating dynamic populating and filtering of dropdown menus built with **Javascript** **HTML** **Bootstrap** and **CSS**
+Responsive tourist website demonstrating dynamic populating and filtering of dropdown menus built with **Javascript** **HTML** **Bootstrap** and **CSS**
 
 <!-- TOC start -->
 
