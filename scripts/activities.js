@@ -215,7 +215,6 @@ window.onload = () => {
       toastUser(toastElem,
         `Your credit card has been charged $${selectedActivity.price*ticketInput.value} for ${ticketInput.value} tickets to ${selectedActivity.name} (a confirmation email has been sent to ${emailInput.value} )`
       );
-      toastMsg.classList.toggle("transition");
     } else {
       toastUser(toastElem,
         `Thank you ${nameInput.value} for reserving your spot at ${selectedActivity.name} (a confirmation email has been sent to ${emailInputFree.value} )`
