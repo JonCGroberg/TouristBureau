@@ -1,12 +1,12 @@
-# Financial Calculators
+#  Tourist Bureau
 
-Responsive website housing multiple financial calculators built with **Javascript** **HTML** **Bootstrap** and **CSS**
+Responsive website tourist website demonstrating dynamic populating and filtering of dropdown menus built with **Javascript** **HTML** **Bootstrap** and **CSS**
 
 <!-- TOC start -->
 
 ## Table of Contents
 
-- [Financial Calculators](#financial-calculators)
+- [Tourist Bureau](#tourist-bureau)
   - [Table of Contents](#table-of-contents)
   - [Live Site](#live-site)
 - [Features](#features)
