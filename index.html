@@ -20,42 +20,172 @@
     <!-- Custom JS and CSS -->
     <link rel="stylesheet" href="styles/styles.css" />
   </head>
-<body>
-   <!-- Header -->
-   <header class="container-fluid">
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-sm fixed-top position-static">
-      <div class="container-fluid px-4 py-1">
-        <a class="navbar-brand" href="#">Tourist Bureau</a>
-        <button
-          class="navbar-toggler-icon navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#collapsibleNavId"
-        ></button>
-        <div class="collapse navbar-collapse text-center" id="collapsibleNavId">
-          <ul class="navbar-nav me-auto ">
-            <li class="nav-item h-100 my-auto">
-              <a class="nav-link" href="#">Home </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="/activities.html">Activities</a>
-            </li>
-          </ul>
-          <!-- Search form -->
-          <form class="d-flex my-auto">
-            <input
-              class="form-control me-sm-2"
-              type="text"
-              placeholder="Search"
-            />
-            <button class="btn btn-outline-primary" type="submit">
-              Search
-            </button>
-          </form>
+  <body class="pb-5">
+    <!-- Header -->
+    <header class="container-fluid">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-sm fixed-top position-static">
+        <div class="container-fluid px-4 py-1">
+          <a class="navbar-brand" href="#">Tourist Bureau</a>
+          <button
+            class="navbar-toggler-icon navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapsibleNavId"
+          ></button>
+          <div
+            class="collapse navbar-collapse text-center"
+            id="collapsibleNavId"
+          >
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item h-100 my-auto">
+                <a class="nav-link" href="#">Home </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="/activities.html"
+                  >Activities</a
+                >
+              </li>
+            </ul>
+            <!-- Search form -->
+            <form class="d-flex my-auto">
+              <input
+                class="form-control me-sm-2"
+                type="text"
+                placeholder="Search"
+              />
+              <button class="btn btn-outline-primary" type="submit">
+                Search
+              </button>
+            </form>
+          </div>
         </div>
-      </div>
-    </nav>
-  </header>
-</body>
+      </nav>
+    </header>
+    <main class="text-center">
+      <section class="mx-auto">
+        <div class="mx-auto mt-4 w-75" style="max-width: 60rem">
+          <h1 class="p-4 display-5">Explore a Wide Range of Activites</h1>
+
+          <p>
+            Welcome to our website, where you can find a diverse selection of
+            activities and experiences to make your days memorable. Whether
+            you're seeking thrilling adventures, creative arts and crafts,
+            enlightening museum visits, delightful wine tastings, or unique
+            experiences beyond the ordinary, we have something for everyone.
+            Browse through our categories and embark on your next unforgettable
+            journey.
+          </p>
+        </div>
+        <div
+          id="carouselId"
+          class="carousel slide pb-5 my-5 mx-auto w-75"
+          data-bs-ride="carousel"
+          style="height: 400px; we"
+        >
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img
+                src="/HikingPage/birding_loop_1.png"
+                class="w-100 h-100 d-block object-fit-cover"
+                alt="First slide"
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="HikingPage/overlook_trail_1.png"
+                class="w-100 h-100 d-block object-fit-cover"
+                alt="Second slide"
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="HikingPage/deep_blue_1.png"
+                class="w-100 h-100 d-block object-fit-cover"
+                alt="Third slide"
+              />
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselId"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselId"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </section>
+      <section
+        class="card shadow text-center m-auto mt-5 w-75"
+        style="max-width: 40rem"
+      >
+        <section id="categories" class="">
+          <h3 class="card-header shadow-sm">Categories</h3>
+          <div class="card-body text-center align-self-center bg-body-ter">
+            <a
+              class="badge rounded-pill text-bg-primary text-decoration-none"
+              href="activities.html"
+              >Adventures</a
+            >
+            <a
+              class="badge rounded-pill text-bg-primary text-decoration-none"
+              href="activities.html"
+              >Arts &amp; Crafts</a
+            >
+            <a
+              class="badge rounded-pill text-bg-primary text-decoration-none"
+              href="activities.html"
+              >Museums</a
+            >
+            <a
+              class="badge rounded-pill text-bg-primary text-decoration-none"
+              href="activities.html"
+              >Wine Tastings</a
+            >
+            <a
+              class="badge rounded-pill text-bg-primary text-decoration-none"
+              href="activities.html"
+              >Other</a
+            >
+          </div>
+        </section>
+        <section id="featured-activities" class="">
+          <h3 class="card-header border shadow-sm">Featured Activities</h3>
+          <article class="card-body w-75 mx-auto">
+            <h4>Valley Hot Air Balloons</h4>
+            <p>
+              Enjoy a lovely hot air balloon ride over the valley at sunrise.
+              Call 800-555-1212 to reserve a date/time after you complete your
+              e-ticket purchase.
+            </p>
+          </article>
+
+          <!-- Repeat the above 'article' structure for each featured activity -->
+        </section>
+        <section id="call-to-action" class="">
+          <h3 class="card-header border shadow-sm">Start Your Adventure</h3>
+          <article class="card-body w-75 mx-auto">
+            <p>
+              Start your journey now by exploring our activities and booking
+              your next adventure. Let the exploration begin!
+            </p>
+            <a href="activities.html" class="btn btn-primary"
+              >Explore Activities</a
+            >
+          </article>
+        </section>
+      </section>
+    </main>
+  </body>
 </html>
