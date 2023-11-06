@@ -1,299 +1,308 @@
 <!doctype html>
 <html lang="en">
-<head>
-<!-- Meta tags -->
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Tourist Bureau</title>
-<!-- Bootstrap CSS and JS -->
-<link
-href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-rel="stylesheet"
-integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-crossorigin="anonymous"
-/>
-<script
-defer
-src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-crossorigin="anonymous"
-></script>
-<!-- Custom JS and CSS -->
-<script defer src="scripts/activities.js" type="module"></script>
-<link rel="stylesheet" href="styles/styles.css" />
-</head>
-<body class="" data-bs-theme="">
-<!-- Header -->
-<header class="container-fluid text-center p-0">
-<!-- Toast for displaying messages -->
-<div class="toast-container position-fixed top-0 p-3 w-100" style="margin-top: 50px;">
-<div
-id="toast"
-class="toast align-items-center text-bg-danger border-0 w-100"
-role="alert"
-><div class="d-flex">
-<div id="toastMsg" class="toast-body col">An Error Occured</div>
-<span>
-<button type="button" class="btn-close btn-close-white p-2" data-bs-dismiss="toast"></button></span>
-</div>
-</div>
-</div>
-<!-- Navbar -->
-<nav class="navbar navbar-expand-sm fixed-top position-static">
-<div class="container-fluid px-4 py-1">
-<a class="navbar-brand" href="/index.html">Tourist Bureau</a>
-<button
-class="navbar-toggler-icon navbar-toggler"
-type="button"
-data-bs-toggle="collapse"
-data-bs-target="#collapsibleNavId"
-></button>
-<div class="collapse navbar-collapse" id="collapsibleNavId">
-<ul class="navbar-nav me-auto">
-<li class="nav-item">
-<a class="nav-link" href="/index.html">Home </a>
-</li>
-<li class="nav-item">
-<a class="nav-link active" href="#">Activities</a>
-</li>
-</ul>
-<!-- Search form -->
-<form class="d-flex">
-<input
-class="form-control me-sm-2"
-type="text"
-placeholder="Search"
-/>
-<button class="btn btn-outline-primary" type="submit">
-Search
-</button>
-</form>
-</div>
-</div>
-</nav>
-</header>
-<!-- Main content -->
-<main class="container-fluid p-4">
-<!-- Activity Finder form -->
-<form
-class="card m-auto shadow"
-id="activityForm"
-style="max-width: 60rem"
->
-<section class="card-header">
-<div class="card-text">Activities Finder</div>
-</section>
-<!-- Card Body -->
-<section>
-<div class="container-fluid">
-<div class="row p-3">
-<!--Left Panel Dropdowns -->
-<article class="col-md-6 col-12 card-body">
-<div class="row">
-<div class="col-12">
-<div class="card-group-vertical shadow-sm">
-<div class="card overflow-hidden">
-<!-- Category selection -->
-<select
-class="form-select border-0 rounded-0"
-name="categoriesSelect"
-id="categoriesSelect"
-required
->
-<option selected value="">Select Category</option>
-</select>
-</div>
-<div class="card">
-<!-- Activity selection -->
-<select
-class="form-select border-0 rounded-0"
-name="activitiesSelect"
-id="activitiesSelect"
-disabled
-required
->
-,
-<option selected value="">Select Activity</option>
-</select>
-</div>
-</div>
-<!-- Information section -->
-<div
-class="card-group-vertical shadow-sm mt-4"
-id="infoSection"
->
-<div class="card">
-<!-- Description -->
-<label class="card-header" for="">Description</label>
-<label
-class="px-3 py-2 small"
-name="description"
-id="description"
-readonly
-></label>
-</div>
-<div class="card">
-<!-- Location -->
-<label class="card-header" for="">Location</label>
-<label
-class="p-3 py-2 small"
-name="location"
-id="location"
-readonly
-></label>
-</div>
+  <head>
+    <!-- Meta tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tourist Bureau</title>
+    <!-- Bootstrap CSS and JS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Custom JS and CSS -->
+    <script defer src="scripts/activities.js" type="module"></script>
+    <link rel="stylesheet" href="styles/styles.css" />
+  </head>
+  <body class="" data-bs-theme="">
+    <!-- Header -->
+    <header class="container-fluid text-center p-0">
+      <!-- Toast for displaying messages -->
+      <div
+        class="toast-container position-fixed top-0 p-3 w-100"
+        style="margin-top: 50px"
+      >
+        <div
+          id="toast"
+          class="toast align-items-center text-bg-danger border-0 w-100"
+          role="alert"
+        >
+          <div class="d-flex">
+            <div id="toastMsg" class="toast-body col">An Error Occured</div>
+            <span>
+              <button
+                type="button"
+                class="btn-close btn-close-white p-2"
+                data-bs-dismiss="toast"
+              ></button
+            ></span>
+          </div>
+        </div>
+      </div>
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-sm fixed-top position-static">
+        <div class="container-fluid px-4 py-1">
+          <a class="navbar-brand" href="/index.html">Tourist Bureau</a>
+          <button
+            class="navbar-toggler-icon navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapsibleNavId"
+          ></button>
+          <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="/index.html">Home </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="#">Activities</a>
+              </li>
+            </ul>
+            <!-- Search form -->
+            <form class="d-flex">
+              <input
+                class="form-control me-sm-2"
+                type="text"
+                placeholder="Search"
+              />
+              <button class="btn btn-outline-primary" type="submit">
+                Search
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- Main content -->
+    <main class="container-fluid p-4">
+      <!-- Activity Finder form -->
+      <form
+        class="card m-auto shadow"
+        id="activityForm"
+        style="max-width: 60rem"
+      >
+        <section class="card-header">
+          <div class="card-text">Activities Finder</div>
+        </section>
+        <!-- Card Body -->
+        <section>
+          <div class="container-fluid">
+            <div class="row p-3">
+              <!--Left Panel Dropdowns -->
+              <article class="col-md-6 col-12 card-body">
+                <div class="row">
+                  <div class="col-12">
+                    <div class="card-group-vertical shadow-sm">
+                      <div class="card overflow-hidden">
+                        <!-- Category selection -->
+                        <select
+                          class="form-select border-0 rounded-0"
+                          name="categoriesSelect"
+                          id="categoriesSelect"
+                          required
+                        >
+                          <option selected value="">Select Category</option>
+                        </select>
+                      </div>
+                      <div class="card">
+                        <!-- Activity selection -->
+                        <select
+                          class="form-select border-0 rounded-0"
+                          name="activitiesSelect"
+                          id="activitiesSelect"
+                          disabled
+                          required
+                        >
+                          ,
+                          <option selected value="">Select Activity</option>
+                        </select>
+                      </div>
+                    </div>
+                    <!-- Information section -->
+                    <div
+                      class="card-group-vertical shadow-sm mt-4"
+                      id="infoSection"
+                    >
+                      <div class="card">
+                        <!-- Description -->
+                        <label class="card-header" for="">Description</label>
+                        <label
+                          class="px-3 py-2 small"
+                          name="description"
+                          id="description"
+                          readonly
+                        ></label>
+                      </div>
+                      <div class="card">
+                        <!-- Location -->
+                        <label class="card-header" for="">Location</label>
+                        <label
+                          class="p-3 py-2 small"
+                          name="location"
+                          id="location"
+                          readonly
+                        ></label>
+                      </div>
 
-<div class="card">
-<!-- Price -->
-<label class="card-header" for="">Price</label>
-<label
-class="p-3 py-2 small"
-name="price"
-id="price"
-readonly
->
-<span id="price"></span
-></label>
-</div>
-</div>
-</div>
-</div>
-</article>
-<!-- Right Panel Info -->
-<article class="col-md col-4 card-body">
-<!-- Buy Info -->
-<section id="purchaseSection" class="row row-gap-3 d-none">
-<div class="col-12">
-<!-- Number of tickets input -->
-<label for="ticketsInput" class="form-label"
->Number Of Tickets</label
->
-<input
-type="number"
-class="form-control"
-name="ticketsInput"
-id="ticketsInput"
-aria-describedby="helpId"
-placeholder=""
-max="2"
-/>
-</div>
-<div class="col-12">
-<!-- Email input -->
-<label for="emailInput" class="form-label">Email</label>
-<input
-type="email"
-class="form-control"
-name="emailInput"
-id="emailInput"
-placeholder=""
-/>
-</div>
-<div class="col-12">
-<!-- Credit card input -->
-<label for="ccInput" class="form-label"
->Credit Card Number</label
->
-<div class="row row-gap-3 g-2">
-<div class="col-sm-8 col-12">
-<input
-type="tel"
-class="form-control"
-inputmode="numeric"
-pattern="[0-9\s]{13,19}"
-autocomplete="cc-number"
-maxlength="19"
-placeholder="xxxx xxxx xxxx xxxx"
-name="ccInput"
-id="ccInput"
-/>
-</div>
-<div class="col">
-<!-- CVV input -->
-<input
-type="text"
-class="form-control col-2"
-name="cvvInput"
-id="cvvInput"
-placeholder="CVV"
-pattern="[0-9\s]{3}"
-minlength="3"
-maxlength="3"
-/>
-</div>
-</div>
-</div>
-<div class="col-12 border border-top-0 my-2 dn"></div>
-<div class="col-12">
-<!-- Purchase button -->
-<button
-type="submit"
-class="btn btn-danger col-12"
-id="purchaseBtn"
->
-Purchase
-</button>
-</div>
-</section>
-<section id="reserveSection" class="row row-gap-3">
-<div class="col-12">
-<!-- Name input -->
-<label for="nameInput" class="form-label">Name</label>
-<input
-type="text"
-class="form-control"
-name="nameInput"
-id="nameInput"
-/>
-</div>
-<div class="col-12">
-<!-- Phone number input -->
-<label for="phoneInput" class="form-label"
->Phone Number</label
->
-<input
-type="tel"
-maxlength="12"
-inputmode="numeric"
-class="form-control"
-pattern="[0-9\s]{10,13}"
-name="phoneInput"
-id="phoneInput"
-/>
-</div>
-<div class="col-12">
-<!-- Email input -->
-<label for="emailInputFree" class="form-label">Email</label>
-<input
-type="email"
-class="form-control"
-name="emailInputFree"
-id="emailInputFree"
-/>
-</div>
-<div class="col-12 border border-top-0 my-2 dn"></div>
-<div class="col-12">
-<!-- Reserve button -->
-<button
-type="submit"
-class="btn btn-primary col-12"
-id="reserveBtn"
->
-Reserve
-</button>
-</div>
-</section>
-<!-- Info -->
-<div class="row d-none">
-<div class="form-control">
-Welcome to the activity finder. Select a category to begin
-</div>
-</div>
-</article>
-</div>
-</div>
-</section>
-</form>
-</main>
-</body>
+                      <div class="card">
+                        <!-- Price -->
+                        <label class="card-header" for="">Price</label>
+                        <label
+                          class="p-3 py-2 small"
+                          name="price"
+                          id="price"
+                          readonly
+                        >
+                          <span id="price"></span
+                        ></label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+              <!-- Right Panel Info -->
+              <article class="col-md col-4 card-body">
+                <!-- Buy Info -->
+                <section id="purchaseSection" class="row row-gap-3 d-none">
+                  <div class="col-12">
+                    <!-- Number of tickets input -->
+                    <label for="ticketsInput" class="form-label"
+                      >Number Of Tickets</label
+                    >
+                    <input
+                      type="number"
+                      class="form-control"
+                      name="ticketsInput"
+                      id="ticketsInput"
+                      aria-describedby="helpId"
+                      placeholder=""
+                      max="2"
+                    />
+                  </div>
+                  <div class="col-12">
+                    <!-- Email input -->
+                    <label for="emailInput" class="form-label">Email</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      name="emailInput"
+                      id="emailInput"
+                      placeholder=""
+                    />
+                  </div>
+                  <div class="col-12">
+                    <!-- Credit card input -->
+                    <label for="ccInput" class="form-label"
+                      >Credit Card Number</label
+                    >
+                    <div class="row row-gap-3 g-2">
+                      <div class="col-sm-8 col-12">
+                        <input
+                          type="tel"
+                          class="form-control"
+                          inputmode="numeric"
+                          pattern="[0-9\s]{13,19}"
+                          autocomplete="cc-number"
+                          maxlength="19"
+                          placeholder="xxxx xxxx xxxx xxxx"
+                          name="ccInput"
+                          id="ccInput"
+                        />
+                      </div>
+                      <div class="col">
+                        <!-- CVV input -->
+                        <input
+                          type="text"
+                          class="form-control col-2"
+                          name="cvvInput"
+                          id="cvvInput"
+                          placeholder="CVV"
+                          pattern="[0-9\s]{3}"
+                          minlength="3"
+                          maxlength="3"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 border border-top-0 my-2 dn"></div>
+                  <div class="col-12">
+                    <!-- Purchase button -->
+                    <button
+                      type="submit"
+                      class="btn btn-danger col-12"
+                      id="purchaseBtn"
+                    >
+                      Purchase
+                    </button>
+                  </div>
+                </section>
+                <section id="reserveSection" class="row row-gap-3">
+                  <div class="col-12">
+                    <!-- Name input -->
+                    <label for="nameInput" class="form-label">Name</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="nameInput"
+                      id="nameInput"
+                    />
+                  </div>
+                  <div class="col-12">
+                    <!-- Phone number input -->
+                    <label for="phoneInput" class="form-label"
+                      >Phone Number</label
+                    >
+                    <input
+                      type="tel"
+                      maxlength="12"
+                      inputmode="numeric"
+                      class="form-control"
+                      pattern="[0-9\s]{10,13}"
+                      name="phoneInput"
+                      id="phoneInput"
+                    />
+                  </div>
+                  <div class="col-12">
+                    <!-- Email input -->
+                    <label for="emailInputFree" class="form-label">Email</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      name="emailInputFree"
+                      id="emailInputFree"
+                    />
+                  </div>
+                  <div class="col-12 border border-top-0 my-2 dn"></div>
+                  <div class="col-12">
+                    <!-- Reserve button -->
+                    <button
+                      type="submit"
+                      class="btn btn-primary col-12"
+                      id="reserveBtn"
+                    >
+                      Reserve
+                    </button>
+                  </div>
+                </section>
+                <!-- Info -->
+                <div class="row d-none">
+                  <div class="form-control">
+                    Welcome to the activity finder. Select a category to begin
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+      </form>
+    </main>
+  </body>
 </html>
