@@ -11,21 +11,31 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
     <script
       defer
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
+    <script defer src="scripts/darkMode.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
     <!-- Custom JS and CSS -->
     <link rel="stylesheet" href="styles/styles.css" />
   </head>
-  <body class="pb-5 bg-scroll" >
+  <body class="pb-5" data-bs-theme="auto">
     <!-- Header -->
-    <header class="container-fluid">
+    <header >
       <!-- Navbar -->
-      <nav class="navbar navbar-expand-sm fixed-top position-static">
-        <div class="container-fluid py-1">
+      <nav class="navbar navbar-expand-md fixed-top position-relative  w-75 m-auto">
+        <div class="container-fluid m-0 p-0">
+          <!-- Brand -->
           <a class="navbar-brand" href="#">Tourist Bureau</a>
           <button
             class="navbar-toggler-icon navbar-toggler"
@@ -33,31 +43,61 @@
             data-bs-toggle="collapse"
             data-bs-target="#collapsibleNavId"
           ></button>
+          <!-- Navigation -->
           <div
             class="collapse navbar-collapse text-center"
             id="collapsibleNavId"
           >
-            <ul class="navbar-nav">
+            <ul class="navbar-nav nav-underline">
               <li class="nav-item h-100">
-                <a class="nav-link" href="#">Home </a>
+                <a class="nav-link active" href="#">Home </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active me-sm-3 me-0" href="./activities.html"
+                <a class="nav-link me-sm-4 me-0" href="./activities.html"
                   >Activities</a
                 >
               </li>
             </ul>
             <!-- Search form -->
-            <form class="d-flex my-auto w-100 mx-auto">
+            <form class="d-flex my-auto ms-auto" style="min-width: 120px">
               <input
-                class="form-control rounded-end-0"
+                class="form-control rounded-end-0 w-100"
                 type="text"
                 placeholder="Search"
               />
               <button class="btn btn-secondary rounded-start-0" type="submit">
-                Search
+                <i class="bi bi-search"></i>
               </button>
             </form>
+            <!-- NightMode Toggle -->
+            <div class="btn-group shadow rounded-3">
+              <button
+                class="btn ms-2 dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+              >
+                <i
+                  class="bi bi-moon-stars-fill p-0 m-0"
+                ></i>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li>
+                  <a class="dropdown-item" href="#"
+                    ><i class="bi-sun-fill"></i> Day</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    ><i class="bi-moon-stars-fill"></i> Night</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    ><i class="bi-circle-half"></i> Auto</a
+                  >
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </nav>
@@ -79,9 +119,9 @@
         </div>
         <div
           id="carouselId"
-          class="carousel slide  my-5 mx-auto w-75 shadow-lg rounded-4 overflow-hidden"
+          class="carousel slide my-5 mx-auto w-75 shadow-lg rounded-4 overflow-hidden"
           data-bs-ride="carousel"
-          style="height: 400px;"
+          style="height: 400px"
         >
           <div class="carousel-inner">
             <div class="carousel-item active">
@@ -126,14 +166,12 @@
           </button>
         </div>
       </section>
-      <section
-        class="card shadow text-center m-auto mt-0 w-75 bg-scroll"
-      >
+      <section class="card shadow text-center m-auto mt-0 w-75 bg-scroll">
         <section id="categories" class="">
           <h3 class="card-header shadow-sm w-5">Categories</h3>
-          <div class="card-body text-center py-5 mx-auto w-75" >
+          <div class="card-body text-center py-5 mx-auto w-75">
             <a
-              class="badge rounded-pill text-bg-primary text-decoration-none  p-2 px-3 my-1"
+              class="badge rounded-pill text-bg-primary text-decoration-none p-2 px-3 my-1"
               href="activities.html"
               >Adventures</a
             >
@@ -143,25 +181,27 @@
               >Arts &amp; Crafts</a
             >
             <a
-              class="badge rounded-pill text-bg-primary text-decoration-none  p-2 px-3 my-1"
+              class="badge rounded-pill text-bg-primary text-decoration-none p-2 px-3 my-1"
               href="activities.html"
               >Museums</a
             >
             <a
-              class="badge rounded-pill text-bg-primary text-decoration-none  p-2 px-3 my-1"
+              class="badge rounded-pill text-bg-primary text-decoration-none p-2 px-3 my-1"
               href="activities.html"
               >Wine Tastings</a
             >
             <a
-              class="badge rounded-pill text-bg-primary text-decoration-none  p-2 px-3 my-1"
+              class="badge rounded-pill text-bg-primary text-decoration-none p-2 px-3 my-1"
               href="activities.html"
               >Other</a
             >
           </div>
         </section>
         <section id="featured-activities" class="">
-          <h3 class="card-header border shadow-sm">Featured Activities</h3>
-          <article class="card-body w-75 mx-auto py-5" style="max-width: 30rem;">
+          <h3 class="card-header border shadow-sm border-start-0 border-end-0">
+            Featured Activities
+          </h3>
+          <article class="card-body w-75 mx-auto py-5" style="max-width: 30rem">
             <h4>Valley Hot Air Balloons</h4>
             <p>
               Enjoy a lovely hot air balloon ride over the valley at sunrise.
@@ -173,8 +213,10 @@
           <!-- Repeat the above 'article' structure for each featured activity -->
         </section>
         <section id="call-to-action" class="">
-          <h3 class="card-header border shadow-sm">Start Your Adventure</h3>
-          <article class="card-body w-75 mx-auto py-5" style="max-width: 30rem;">
+          <h3 class="card-header border shadow-sm border-start-0 border-end-0">
+            Start Your Adventure
+          </h3>
+          <article class="card-body w-75 mx-auto py-5" style="max-width: 30rem">
             <p>
               Start your journey now by exploring our activities and booking
               your next adventure. Let the exploration begin!
