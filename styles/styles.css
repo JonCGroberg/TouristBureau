@@ -1,12 +1,13 @@
 
 .card-group-vertical>.card:not(:first-child):not(:last-child) {
+    /* width: 100%; */
     border-radius: 0px;
+    border-top: 0px;
 }
 
 .card-group-vertical>.card:first-child {
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
-
 }
 
 .card-group-vertical>.card:last-child {

@@ -1,4 +1,4 @@
-#  Tourist Bureau
+# Tourist Bureau
 
 Responsive tourist website demonstrating dynamic populating and filtering of dropdown menus built with **Javascript** **HTML** **Bootstrap** and **CSS**
 
@@ -9,6 +9,7 @@ Responsive tourist website demonstrating dynamic populating and filtering of dro
 - [Tourist Bureau](#tourist-bureau)
   - [Table of Contents](#table-of-contents)
   - [Live Site](#live-site)
+      - [Deployed using Github Pages](#deployed-using-github-pages)
 - [Features](#features)
     - [User Experience](#user-experience)
   - [Pages](#pages)
@@ -24,10 +25,13 @@ Responsive tourist website demonstrating dynamic populating and filtering of dro
       - [Code](#code)
       - [Demonstration](#demonstration)
       - [Code](#code-1)
+    - [Credits](#credits)
 
 <!-- TOC end -->
 
 ## Live Site
+
+#### Deployed using Github Pages
 
 > Landing Page [https://joncgroberg.github.io/Workbook4_TouristBureau/activities.html](https://joncgroberg.github.io/Workbook4_TouristBureau/)
 
@@ -37,7 +41,7 @@ Responsive tourist website demonstrating dynamic populating and filtering of dro
 
 ### User Experience
 
-- Consistent navigation and theme
+- Consistent navigation and theme including toggleable **Dark Mode** (set to `auto` by default)
 - **Focus** automatically on the first input field
 - Monetary values rounded to **2 decimal** point values and include **$** where needed
 - Abilty to clear input using a `reset` button
@@ -87,7 +91,7 @@ Responsive tourist website demonstrating dynamic populating and filtering of dro
 
 ### Notable Feature
 
-- **Vertical** Bootstrap Card Group based on the standared horizontal card group
+- **Vertical** Bootstrap Card Group functions similary to the standared standard bootstrap horizontal card group
 
   - Rounded and border only of the outside cards and borders between middle cards
 
@@ -131,3 +135,5 @@ Responsive tourist website demonstrating dynamic populating and filtering of dro
     toastUser,
   } from "./helperFunctions.js";
   ```
+### Credits
+  - `darkmode.js` is forked from the bootstrap website

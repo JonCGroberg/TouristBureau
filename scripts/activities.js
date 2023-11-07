@@ -153,6 +153,7 @@ const priceLabel = document.getElementById("price");
 
 // Page Logic
 window.onload = () => {
+  nameInput.focus();
   // Selected Activity Tracker
   let selectedActivity = undefined;
 
