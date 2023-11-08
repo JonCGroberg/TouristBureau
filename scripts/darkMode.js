@@ -28,20 +28,18 @@ const getPreferredTheme = () => {
     ? "dark"
     : "light";
 };
-
 const setTheme = (theme) => {
   if (
     theme === "auto" &&
     window.matchMedia("(prefers-color-scheme: dark)").matches
   ) {
+    setStoredTheme("dark")
     document.documentElement.setAttribute("data-bs-theme", "dark");
   } else {
+    setStoredTheme(theme)
     document.documentElement.setAttribute("data-bs-theme", theme);
   }
 };
-
-setTheme(getPreferredTheme());
-
 const showActiveTheme = (theme, focus = false) => {
   const themeSwitcher = document.querySelector("#bd-theme");
 
@@ -73,6 +71,8 @@ const showActiveTheme = (theme, focus = false) => {
     themeSwitcher.focus();
   }
 };
+
+setTheme(getPreferredTheme());
 
 window
   .matchMedia("(prefers-color-scheme: dark)")
