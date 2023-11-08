@@ -29,7 +29,7 @@
     <!-- Custom JS and CSS -->
     <link rel="stylesheet" href="styles/styles.css" />
   </head>
-  <body class="pb-5" data-bs-theme="">
+  <body class="pb-5" data-bs-theme="auto">
     <!-- Header -->
     <header >
       <!-- Navbar -->
@@ -70,7 +70,7 @@
               </button>
             </form>
             <!-- NightMode Toggle -->
-            <div class="btn-group mt-md-0 mt-2">
+            <div class="btn-group mt-md-0 mt-2" id = "nightModeToggle">
               <button
                 class="btn border ms-2 dropdown-toggle shadow-sm px-3"
                 type="button"
@@ -82,18 +82,18 @@
               </button>
               <ul class="dropdown-menu dropdown-menu-end">
                 <li>
-                  <a class="dropdown-item" href="#"
-                    ><i class="bi-sun-fill"></i> Day</a
+                  <button class="dropdown-item" id = "dayButton">
+                    <i class="bi-sun-fill"></i> Day</button
                   >
                 </li>
                 <li>
-                  <a class="dropdown-item" href="#"
-                    ><i class="bi-moon-stars-fill"></i> Night</a
+                  <button class="dropdown-item" id = "nightButton"
+                    ><i class="bi-moon-stars-fill"></i> Night</button
                   >
                 </li>
                 <li>
-                  <a class="dropdown-item" href="#"
-                    ><i class="bi-circle-half"></i> Auto</a
+                  <button class="dropdown-item" id="autoButton"
+                    ><i class="bi-circle-half"></i> Auto</button
                   >
                 </li>
               </ul>
