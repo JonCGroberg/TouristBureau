@@ -28,3 +28,8 @@
     transition: all 1s linear;
     height: 0px;
 }
+
+.vertical-text{
+  text-orientation: sideways;
+  writing-mode: vertical-rl; 
+}

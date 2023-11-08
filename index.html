@@ -31,9 +31,11 @@
   </head>
   <body class="pb-5" data-bs-theme="auto">
     <!-- Header -->
-    <header >
+    <header>
       <!-- Navbar -->
-      <nav class="navbar navbar-expand-md fixed-top position-relative  w-75 m-auto">
+      <nav
+        class="navbar navbar-expand-md fixed-top position-relative w-75 m-auto"
+      >
         <div class="container-fluid m-0 p-0">
           <!-- Brand -->
           <a class="navbar-brand" href="./index.html">Tourist Bureau</a>
@@ -70,31 +72,29 @@
               </button>
             </form>
             <!-- NightMode Toggle -->
-            <div class="btn-group mt-md-0 mt-2" id = "nightModeToggle">
+            <div class="btn-group mt-md-0 mt-2" id="nightModeToggle">
               <button
                 class="btn border ms-2 dropdown-toggle shadow-sm px-3"
                 type="button"
                 data-bs-toggle="dropdown"
               >
-                <i
-                  class="bi bi-moon-stars-fill p-0 m-0"
-                ></i>
+                <i class="bi bi-moon-stars-fill p-0 m-0"></i>
               </button>
               <ul class="dropdown-menu dropdown-menu-end">
                 <li>
-                  <button class="dropdown-item" id = "dayButton">
-                    <i class="bi-sun-fill"></i> Day</button
-                  >
+                  <button class="dropdown-item" id="dayButton">
+                    <i class="bi-sun-fill"></i> Day
+                  </button>
                 </li>
                 <li>
-                  <button class="dropdown-item" id = "nightButton"
-                    ><i class="bi-moon-stars-fill"></i> Night</button
-                  >
+                  <button class="dropdown-item" id="nightButton">
+                    <i class="bi-moon-stars-fill"></i> Night
+                  </button>
                 </li>
                 <li>
-                  <button class="dropdown-item" id="autoButton"
-                    ><i class="bi-circle-half"></i> Auto</button
-                  >
+                  <button class="dropdown-item" id="autoButton">
+                    <i class="bi-circle-half"></i> Auto
+                  </button>
                 </li>
               </ul>
             </div>
@@ -228,7 +228,11 @@
         </section>
       </section>
     </main>
+    <button
+      class="btn btn-primary position-fixed bottom-50 vertical-text px-2 py-3 rounded-4 rounded-start-0 shadow"
+      onclick="location='/'"
+    >
+      Portfolio <i class="bi bi-arrow-down-circle-fill"></i>
+    </button>
   </body>
 </html>
-
-
