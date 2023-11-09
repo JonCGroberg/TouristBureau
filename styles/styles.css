@@ -1,4 +1,3 @@
-
 .card-group-vertical>.card:not(:first-child):not(:last-child) {
     /* width: 100%; */
     border-radius: 0px;
@@ -29,7 +28,13 @@
     height: 0px;
 }
 
-.vertical-text{
-  text-orientation: sideways;
-  writing-mode: vertical-rl; 
+.vertical-text {
+    writing-mode: vertical-lr;
+    text-orientation:sideways;
+    transform: translateY(-50%);   
+    top: 50%;
+    bottom: 35%;
+    padding: .5rem 0.5rem .5rem 0.5rem;
+    font-weight: bold;
+    font-size: small;
 }

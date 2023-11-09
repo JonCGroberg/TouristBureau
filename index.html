@@ -51,11 +51,11 @@
             id="collapsibleNavId"
           >
             <ul class="navbar-nav nav-underline">
-              <li class="nav-item h-100">
+              <li class="nav-item">
                 <a class="nav-link active" href="#">Home </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link mb-md-0 mb-2" href="./activities.html"
+                <a class="nav-link me-md-3 me-0" href="./activities.html"
                   >Activities</a
                 >
               </li>
@@ -72,13 +72,14 @@
               </button>
             </form>
             <!-- NightMode Toggle -->
-            <div class="btn-group mt-md-0 mt-2" id="nightModeToggle">
+            <div class="btn-group mt-md-0 mt-3" id="nightModeToggle">
               <button
-                class="btn border ms-2 dropdown-toggle shadow-sm px-3"
+                class="btn border ms-3 dropdown-toggle shadow-sm "
                 type="button"
                 data-bs-toggle="dropdown"
               >
-                <i class="bi bi-moon-stars-fill p-0 m-0"></i>
+              <span class="d-inline d-md-none mx-2">Toggle Theme</span>
+                <i class="bi bi-moon-stars-fill p-0 m-0" id = "toggleIcon"></i>
               </button>
               <ul class="dropdown-menu dropdown-menu-end">
                 <li>
@@ -229,7 +230,7 @@
       </section>
     </main>
     <button
-      class="btn btn-primary position-fixed bottom-50 vertical-text px-2 py-3 rounded-4 rounded-start-0 shadow"
+      class="btn btn-primary position-fixed vertical-text rounded-4 rounded-start-0 shadow"
       onclick="location='/'"
     >
       Portfolio <i class="bi bi-arrow-down-circle-fill"></i>

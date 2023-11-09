@@ -1,23 +1,19 @@
 // Custom toggle code using boostrap functions
 
+const icons = {
+  light: "bi-sun-fill",
+  dark: "bi-moon-stars-fill",
+  auto: "bi-circle-half",
+};
+
+const toggleIcon = document.getElementById("toggleIcon");
 const nightModeToggle = document.getElementById("nightModeToggle");
 const lightButton = document.getElementById("dayButton");
 const darkButton = document.getElementById("nightButton");
 const autoButton = document.getElementById("autoButton");
 
-darkButton.addEventListener("click", () => setTheme("dark"));
-autoButton.addEventListener("click", () => setTheme("auto"));
-lightButton.addEventListener("click", () => setTheme("light"));
-
-/*!
- * Color mode toggler for Bootstrap's docs (https://getbootstrap.com/)
- * Copyright 2011-2023 The Bootstrap Authors
- * Licensed under the Creative Commons Attribution 3.0 Unported License.
- */
-
 const getStoredTheme = () => localStorage.getItem("theme");
 const setStoredTheme = (theme) => localStorage.setItem("theme", theme);
-
 const getPreferredTheme = () => {
   const storedTheme = getStoredTheme();
   if (storedTheme) {
@@ -33,19 +29,25 @@ const setTheme = (theme) => {
     theme === "auto" &&
     window.matchMedia("(prefers-color-scheme: dark)").matches
   ) {
-    setStoredTheme("dark")
+    setStoredTheme("dark");
+    for (const key in icons) {
+      if (key != theme) toggleIcon.classList.remove(icons[key]);
+    }
+    toggleIcon.classList.add(icons[theme]);
     document.documentElement.setAttribute("data-bs-theme", "dark");
   } else {
-    setStoredTheme(theme)
+    setStoredTheme(theme);
+    for (const key in icons) {
+      if (key != theme) toggleIcon.classList.remove(icons[key]);
+    }
+    toggleIcon.classList.add(icons[theme]);
     document.documentElement.setAttribute("data-bs-theme", theme);
   }
 };
 const showActiveTheme = (theme, focus = false) => {
   const themeSwitcher = document.querySelector("#bd-theme");
 
-  if (!themeSwitcher) {
-    return;
-  }
+  if (!themeSwitcher) return;
 
   const themeSwitcherText = document.querySelector("#bd-theme-text");
   const activeThemeIcon = document.querySelector(".theme-icon-active use");
@@ -67,9 +69,7 @@ const showActiveTheme = (theme, focus = false) => {
   const themeSwitcherLabel = `${themeSwitcherText.textContent} (${btnToActive.dataset.bsThemeValue})`;
   themeSwitcher.setAttribute("aria-label", themeSwitcherLabel);
 
-  if (focus) {
-    themeSwitcher.focus();
-  }
+  if (focus) themeSwitcher.focus();
 };
 
 setTheme(getPreferredTheme());
@@ -95,3 +95,6 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+darkButton.addEventListener("click", () => setTheme("dark"));
+autoButton.addEventListener("click", () => setTheme("auto"));
+lightButton.addEventListener("click", () => setTheme("light"));
