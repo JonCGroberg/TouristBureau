@@ -48,10 +48,10 @@ html {
 
 .scroll-snap-bottom{
     scroll-snap-align: start;
-    scroll-snap-stop:normal;
+    scroll-snap-stop: unset;
 }
 .scroll-snap-start {
     scroll-snap-align: start;
-    scroll-snap-stop: normal;
+    scroll-snap-stop: unset;
     scroll-margin-top: 40px;
 }
