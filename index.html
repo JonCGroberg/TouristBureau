@@ -31,14 +31,14 @@
   </head>
   <body data-bs-theme="auto">
     <!-- Header -->
-    <header>
+    <header class="scroll-snap-start">
       <!-- Navbar -->
       <nav
-        class="navbar navbar-expand-md fixed-top position-relative w-75 m-auto"
+        class="navbar navbar-expand-md fixed-top position-relative w-75 m-auto "
       >
         <div class="container-fluid m-0 p-0">
           <!-- Brand -->
-          <a class="navbar-brand" href="./index.html">Tourist Bureau</a>
+          <a class="navbar-brand" href="#">Tourist Bureau</a>
           <button
             class="navbar-toggler-icon navbar-toggler"
             type="button"
@@ -120,7 +120,7 @@
         </div>
         <div
           id="carouselId"
-          class="carousel slide my-5 mx-auto w-75 shadow-lg rounded-4 overflow-hidden"
+          class="carousel slide my-5 mx-auto w-75 shadow-lg rounded-4 overflow-hidden scroll-snap-start"
           data-bs-ride="carousel"
           style="height: 400px"
         >
@@ -167,8 +167,8 @@
           </button>
         </div>
       </section>
-      <section class="card shadow text-center m-auto mt-0 w-75 bg-scroll">
-        <section id="categories" class="">
+      <section class="card shadow text-center m-auto mt-0 w-75">
+        <section id="categories" class="scroll-snap-start">
           <h3 class="card-header shadow-sm w-5">Categories</h3>
           <div class="card-body text-center py-5 mx-auto w-75">
             <a
@@ -198,7 +198,7 @@
             >
           </div>
         </section>
-        <section id="featured-activities" class="">
+        <section id="featured-activities" class="scroll-snap-start">
           <h3 class="card-header border shadow-sm border-start-0 border-end-0">
             Featured Activities
           </h3>
@@ -213,7 +213,7 @@
 
           <!-- Repeat the above 'article' structure for each featured activity -->
         </section>
-        <section id="call-to-action" class="">
+        <section id="call-to-action" class="scroll-snap-start">
           <h3 class="card-header border shadow-sm border-start-0 border-end-0">
             Start Your Adventure
           </h3>
@@ -238,29 +238,33 @@
         >Portfolio <i class="bi bi-arrow-down-circle-fill"></i
       ></span>
     </button>
-    <footer class="container-fluid mt-5 pt-1 px-0 w-75 m-auto">
+    <footer class="container-fluid mt-5 pt-1 px-0 w-75 m-auto scroll-snap-bottom">
       <div
-        class="d-flex flex-wrap justify-content-between align-items-center mt-5 py-4 border-top "
+        class="d-flex flex-wrap justify-content-between align-items-center mt-5 py-4 border-top"
       >
         <div class="col-md-4 d-flex align-items-center">
           <span class="text-body-secondary">© 2023 Tourist Bureau, Inc</span>
         </div>
 
-        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+        <ul class="nav justify-content-end">
           <li class="ms-3">
-            <a class="text-body-secondary" href="#"></a>
-            <i class="bi bi-facebook"></i>
+            <a class="text-body-secondary" href="#">
+              <i class="bi bi-facebook"></i
+            ></a>
           </li>
           <li class="ms-3">
-            <a class="text-body-secondary" href="#"></a>
-             <i class="bi bi-twitter-x"></i>
+            <a class="text-body-secondary" href="#">
+              <i class="bi bi-twitter-x"></i
+            ></a>
           </li>
           <li class="ms-3">
-            <a class="text-body-secondary" href="#"></a>
-             <i class="bi bi-instagram"></i>
+            <a class="text-body-secondary" href="#">
+              <i class="bi bi-instagram"></i
+            ></a>
           </li>
         </ul>
       </div>
     </footer>
+    
   </body>
 </html>

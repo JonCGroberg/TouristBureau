@@ -4,6 +4,7 @@
     border-top: 0px;
 }
 
+
 .card-group-vertical>.card:first-child {
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
@@ -30,10 +31,27 @@
 
 .vertical-text {
     writing-mode: vertical-lr;
-    text-orientation:sideways;
-    transform: translateY(-50%);   
+    text-orientation: sideways;
+    transform: translateY(-50%);
     top: 50%;
     padding: 2.5rem 0.5rem 2.5rem 0.5rem;
     font-weight: bold;
     font-size: small;
+}
+
+html {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+    position: relative;
+}
+
+.scroll-snap-bottom{
+    scroll-snap-align: start;
+    scroll-snap-stop:normal;
+}
+.scroll-snap-start {
+    scroll-snap-align: start;
+    scroll-snap-stop: normal;
+    scroll-margin-top: 40px;
 }
