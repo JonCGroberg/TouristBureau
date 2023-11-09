@@ -33,8 +33,7 @@
     text-orientation:sideways;
     transform: translateY(-50%);   
     top: 50%;
-    bottom: 35%;
-    padding: .5rem 0.5rem .5rem 0.5rem;
+    padding: 2.5rem 0.5rem 2.5rem 0.5rem;
     font-weight: bold;
     font-size: small;
 }
