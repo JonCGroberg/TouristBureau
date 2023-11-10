@@ -32,11 +32,11 @@
 .vertical-text {
     writing-mode: vertical-lr;
     text-orientation: sideways;
-    transform: translateY(-50%);
-    top: 50%;
-    padding: 2.5rem 0.5rem 2.5rem 0.5rem;
-    font-weight: bold;
-    font-size: small;
+    /* transform: translateY(-50%); */
+    top: 40%;
+    /* padding: 2.5rem 0.5rem 2.5rem 0.5rem; */
+    font-size: calc(.75em + 0.5vw);
+
 }
 
 html {
