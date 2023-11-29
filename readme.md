@@ -2,55 +2,12 @@
 
 Responsive tourist website demonstrating dynamic populating and filtering of dropdown menus built with **Javascript** **HTML** **Bootstrap** and **CSS**
 
-<!-- TOC start -->
-
-## Table of Contents
-
-- [Tourist Bureau](#tourist-bureau)
-  - [Table of Contents](#table-of-contents)
-  - [Live Site](#live-site)
-      - [Deployed using Github Pages](#deployed-using-github-pages)
-- [Features](#features)
-    - [User Experience](#user-experience)
-  - [Pages](#pages)
-    - [Landing Page](#landing-page)
-      - [Desktop View](#desktop-view)
-      - [Mobile View](#mobile-view)
-    - [Category Page](#category-page)
-      - [Payed Activities](#payed-activities)
-      - [Free Activities](#free-activities)
-      - [User Toast](#user-toast)
-    - [Technical](#technical)
-    - [Notable Features](#notable-features)
-      - [Dark/Light/Auto Theme Toggle](#darklightauto-theme-toggle)
-      - [Vertical Bootstrap Card Group](#vertical-bootstrap-card-group)
-    - [Credits](#credits)
-
-<!-- TOC end -->
-
-## Live Site
-
 #### Deployed using Github Pages
 
 > Landing Page [https://joncgroberg.github.io/Workbook4_TouristBureau/activities.html](https://joncgroberg.github.io/Workbook4_TouristBureau/)
 
 > Activity Finder [https://joncgroberg.github.io/Workbook4_TouristBureau/activities.html](https://joncgroberg.github.io/Workbook4_TouristBureau/activities.html)
 
-# Features
-
-### User Experience
-
-- Consistent navigation and theme including toggleable **Dark Mode** (set to `auto` by default)
-- **Focus** automatically on the first input field
-- Monetary values rounded to **2 decimal** point values and include **$** where needed
-- Abilty to clear input using a `reset` button
-- Calculation animation
-- Inability to enter bad data using **input restriction**
-
-  <img height=110px src="./images/validationMatch.png"/>
-  <img height=110px src="./images/validation.png"/>
-
-## Pages
 
 ### Landing Page
 
@@ -84,6 +41,19 @@ Responsive tourist website demonstrating dynamic populating and filtering of dro
 #### User Toast
 
 ![](./images/Screenshot%20from%202023-11-03%2018-58-41.png)
+
+### User Experience
+
+- Consistent navigation and theme including toggleable **Dark Mode** (set to `auto` by default)
+- **Focus** automatically on the first input field
+- Monetary values rounded to **2 decimal** point values and include **$** where needed
+- Abilty to clear input using a `reset` button
+- Calculation animation
+- Inability to enter bad data using **input restriction**
+
+  <img height=110px src="./images/validationMatch.png"/>
+  <img height=110px src="./images/validation.png"/>
+
 
 ### Technical
 
